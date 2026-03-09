@@ -120,6 +120,11 @@
       });
     }
 
+    // Sort by popularity (redemptions) descending
+    state.filteredPerks.sort(function (a, b) {
+      return (b.redemptions || 0) - (a.redemptions || 0);
+    });
+
     // Dedup by brand name — show each brand only once (first occurrence)
     var seenBrands = {};
     state.filteredPerks = state.filteredPerks.filter(function (p) {

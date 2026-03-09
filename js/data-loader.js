@@ -282,18 +282,29 @@
     // Sort countries alphabetically
     var countries = Array.from(countrySet).sort();
 
-    // Top brands: brands in most countries
+    // Aggregate total redemptions per brand
+    var brandRedemptions = {};
+    for (var n = 0; n < perks.length; n++) {
+      var bp = perks[n];
+      if (!brandRedemptions[bp.brandName]) {
+        brandRedemptions[bp.brandName] = 0;
+      }
+      brandRedemptions[bp.brandName] += bp.redemptions;
+    }
+
+    // Top brands: sorted by total redemptions (popularity)
     var topBrands = Object.keys(brandCountryMap)
       .filter(function (name) { return name; }) // skip empty names
       .map(function (name) {
         return {
           brandName: name,
           countries: brandCountryMap[name].size,
+          redemptions: brandRedemptions[name] || 0,
           logo: '',
           brandId: ''
         };
       })
-      .sort(function (a, b) { return b.countries - a.countries; })
+      .sort(function (a, b) { return b.redemptions - a.redemptions; })
       .slice(0, 30);
 
     // Attach logos to top brands

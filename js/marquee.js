@@ -9,17 +9,8 @@
 (function (global) {
   'use strict';
 
-  var MAX_BRANDS = 15;
+  var MAX_BRANDS = 20;
   var SCROLL_SPEED = 0.25; // px per frame (~15px/s at 60fps)
-
-  /* Curated list of widely recognisable brands to show in the marquee */
-  var CURATED_BRANDS = new Set([
-    'Amazon', 'Nike', 'Apple', 'Adidas', 'ASOS', 'Just Eat', 'Uber',
-    'Spotify', 'Samsung', 'IKEA', 'H&M', 'Costa Coffee', 'Deliveroo',
-    'Netflix', 'John Lewis', 'Tesco', 'Argos', 'Starbucks', 'Uber Eats',
-    'New Look', 'Marks & Spencer', 'Primark', 'Zalando', 'Booking.com',
-    'Currys', 'Halfords', 'TK Maxx', 'Pizza Express', 'ODEON', 'Vue'
-  ]);
 
   /* ── Build a single logo element ─────────────────────────────── */
 
@@ -71,13 +62,8 @@
       return;
     }
 
-    var curated = topBrands.filter(function (b) {
-      return CURATED_BRANDS.has(b.brandName);
-    });
-    var remaining = topBrands.filter(function (b) {
-      return !CURATED_BRANDS.has(b.brandName);
-    });
-    var brands = curated.concat(remaining).slice(0, MAX_BRANDS);
+    // topBrands already sorted by popularity (redemptions) from data-loader
+    var brands = topBrands.slice(0, MAX_BRANDS);
 
     // Build track: two identical strips side by side
     var track = document.createElement('div');
