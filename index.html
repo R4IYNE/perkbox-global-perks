@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Perks Catalogue | Perkbox</title>
+  <meta name="description" content="Explore Perkbox's global perks catalogue — thousands of brands across 180+ countries, harmonised for your global workforce.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/brand.css">
+  <link rel="stylesheet" href="css/perks.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo-dark.svg">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Navigation
+       ═══════════════════════════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo-link" aria-label="Perkbox home">
+        <img src="assets/logo-white.svg" alt="Perkbox" class="nav__logo" width="120" height="32">
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Hero Section
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="hero" aria-label="Global perks overview">
+    <div class="container hero__inner">
+      <h1 class="hero__headline">
+        World-class perks,<br>wherever your people are
+      </h1>
+      <p class="hero__sub">
+        Every employee deserves to feel valued &mdash; no matter where they are or what they&rsquo;re into. Perkbox gives you a single platform to harmonise benefits globally, simplify reporting, and cut admin for your HR&nbsp;team.
+      </p>
+      <div class="hero__stats">
+        <div class="hero-stat reveal-stat">
+          <svg class="hero-stat__icon" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          <span class="hero-stat__number" id="stat-total-perks">0</span>
+          <span class="hero-stat__label">Global perks</span>
+        </div>
+        <div class="hero-stat reveal-stat">
+          <svg class="hero-stat__icon" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="hero-stat__number" id="stat-total-brands">0</span>
+          <span class="hero-stat__label">Brands</span>
+        </div>
+        <div class="hero-stat reveal-stat">
+          <svg class="hero-stat__icon" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="hero-stat__number" id="stat-total-countries">0</span>
+          <span class="hero-stat__label">Countries</span>
+        </div>
+      </div>
+      <div class="hero__cta">
+        <a href="#main-content" class="btn-primary">Explore the catalogue</a>
+      </div>
+    </div>
+    <div class="hero__people">
+      <img src="assets/hero-person-1.jpg" alt="Employee using Perkbox" class="hero__people-img" loading="lazy">
+      <img src="assets/hero-group.jpg" alt="Team enjoying Perkbox benefits" class="hero__people-img hero__people-img--wide" loading="lazy">
+      <img src="assets/hero-person-2.jpg" alt="Employee celebrating savings" class="hero__people-img" loading="lazy">
+    </div>
+    <p class="hero__disclaimer">Number of perks will vary country-to-country. We are continuously growing our global catalogue.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Top Brands Marquee
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="marquee-section" aria-label="Top brands">
+    <div class="container">
+      <h2 class="marquee-section__heading"><img src="assets/icons/perkicon-stars.svg" class="perkicon perkicon--inline" alt="" aria-hidden="true"> Deals for all people of all interests</h2>
+    </div>
+    <div class="marquee" id="marquee" aria-hidden="true"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Loading State
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="loading" id="loading">
+    <div class="spinner" aria-label="Loading"></div>
+    <p class="loading__text">Loading global perks catalogue&hellip;</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Main Content (hidden until data loads)
+       ═══════════════════════════════════════════════════════════════ -->
+  <div id="main-content" style="display: none;">
+
+    <!-- Interactive Map -->
+    <section class="map-section reveal-up" aria-label="Global perks map">
+      <div class="container">
+        <div class="map-section__header">
+          <h2 class="map-section__heading">Explore perks by country</h2>
+          <select id="map-country-select" class="map-section__select" aria-label="Select a country">
+            <option value="">All Countries</option>
+          </select>
+        </div>
+        <div class="map-container" id="map-container" role="img" aria-label="Interactive world map showing perk availability by country"></div>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" id="filter-bar-wrapper">
+      <div class="container" id="filter-bar"></div>
+    </div>
+
+    <!-- Results Bar + Perks Grid -->
+    <section class="perks-section" aria-label="Perks catalogue">
+      <div class="container">
+        <div class="results-bar results-bar--centered" id="results-bar">
+          <span class="results-bar__count" id="results-count"></span>
+        </div>
+        <div class="perks-grid" id="perks-grid"></div>
+        <!-- Load more button is injected by tiles.js -->
+      </div>
+    </section>
+
+    <!-- Employees love Perkbox -->
+    <section class="love-section reveal-up" aria-label="Employees love Perkbox">
+      <div class="container">
+        <h2 class="love-section__heading"><img src="assets/icons/perkicon-lightning.svg" class="perkicon perkicon--inline perkicon--light" alt="" aria-hidden="true"> Employees love Perkbox</h2>
+        <div class="love-grid">
+          <div class="love-card reveal-stat">
+            <div class="love-card__icon">
+              <svg viewBox="0 0 640 640" fill="currentColor"><path d="M320 64C355.3 64 384 92.7 384 128C384 163.3 355.3 192 320 192C284.7 192 256 163.3 256 128C256 92.7 284.7 64 320 64zM416 376C416 401 403.3 423 384 435.9L384 528C384 554.5 362.5 576 336 576L304 576C277.5 576 256 554.5 256 528L256 435.9C236.7 423 224 401 224 376L224 336C224 283 267 240 320 240C373 240 416 283 416 336L416 376zM160 96C190.9 96 216 121.1 216 152C216 182.9 190.9 208 160 208C129.1 208 104 182.9 104 152C104 121.1 129.1 96 160 96zM176 336L176 368C176 400.5 188.1 430.1 208 452.7L208 528C208 529.2 208 530.5 208.1 531.7C199.6 539.3 188.4 544 176 544L144 544C117.5 544 96 522.5 96 496L96 439.4C76.9 428.4 64 407.7 64 384L64 352C64 299 107 256 160 256C172.7 256 184.8 258.5 195.9 262.9C183.3 284.3 176 309.3 176 336zM432 528L432 452.7C451.9 430.2 464 400.5 464 368L464 336C464 309.3 456.7 284.4 444.1 262.9C455.2 258.4 467.3 256 480 256C533 256 576 299 576 352L576 384C576 407.7 563.1 428.4 544 439.4L544 496C544 522.5 522.5 544 496 544L464 544C451.7 544 440.4 539.4 431.9 531.7C431.9 530.5 432 529.2 432 528zM480 96C510.9 96 536 121.1 536 152C536 182.9 510.9 208 480 208C449.1 208 424 182.9 424 152C424 121.1 449.1 96 480 96z"/></svg>
+            </div>
+            <div class="love-card__number" id="love-stat-employees">4,000,000</div>
+            <div class="love-card__label">employees supported worldwide</div>
+          </div>
+          <div class="love-card reveal-stat">
+            <div class="love-card__icon">
+              <svg viewBox="0 0 640 640" fill="currentColor"><path d="M192 160L192 144C192 99.8 278 64 384 64C490 64 576 99.8 576 144L576 160C576 190.6 534.7 217.2 474 230.7C471.6 227.9 469.1 225.2 466.6 222.7C451.1 207.4 431.1 195.8 410.2 187.2C368.3 169.7 313.7 160.1 256 160.1C234.1 160.1 212.7 161.5 192.2 164.2C192 162.9 192 161.5 192 160.1zM496 417L496 370.8C511.1 366.9 525.3 362.3 538.2 356.9C551.4 351.4 564.3 344.7 576 336.6L576 352C576 378.8 544.5 402.5 496 417zM496 321L496 288C496 283.5 495.6 279.2 495 275C510.5 271.1 525 266.4 538.2 260.8C551.4 255.2 564.3 248.6 576 240.5L576 255.9C576 282.7 544.5 306.4 496 320.9zM64 304L64 288C64 243.8 150 208 256 208C362 208 448 243.8 448 288L448 304C448 348.2 362 384 256 384C150 384 64 348.2 64 304zM448 400C448 444.2 362 480 256 480C150 480 64 444.2 64 400L64 384.6C75.6 392.7 88.5 399.3 101.8 404.9C143.7 422.4 198.3 432 256 432C313.7 432 368.3 422.3 410.2 404.9C423.4 399.4 436.3 392.7 448 384.6L448 400zM448 480.6L448 496C448 540.2 362 576 256 576C150 576 64 540.2 64 496L64 480.6C75.6 488.7 88.5 495.3 101.8 500.9C143.7 518.4 198.3 528 256 528C313.7 528 368.3 518.3 410.2 500.9C423.4 495.4 436.3 488.7 448 480.6z"/></svg>
+            </div>
+            <div class="love-card__number" id="love-stat-savings">&pound;27,788,775</div>
+            <div class="love-card__label">saved by employees last year</div>
+          </div>
+          <div class="love-card reveal-stat">
+            <div class="love-card__icon">
+              <svg viewBox="0 0 640 640" fill="currentColor"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>
+            </div>
+            <div class="love-card__number" id="love-stat-activation">89%</div>
+            <div class="love-card__label">activation rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /main-content -->
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Footer
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img src="assets/logo-white.svg" alt="Perkbox" class="footer__logo" width="100" height="28">
+      <p class="footer__text">&copy; 2026 Perkbox. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Scripts
+       ═══════════════════════════════════════════════════════════════ -->
+  <!-- CDN Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+
+  <!-- App Modules (order matters) -->
+  <script src="js/animations.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/tiles.js"></script>
+  <script src="js/marquee.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

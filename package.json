@@ -1,0 +1,14 @@
+{
+  "name": "perkbox-global-perks",
+  "version": "1.0.0",
+  "description": "Interactive global perks catalogue for Perkbox sales enablement",
+  "private": true,
+  "scripts": {
+    "test": "jest --verbose",
+    "serve": "npx serve ."
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

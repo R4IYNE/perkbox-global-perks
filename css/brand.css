@@ -1,0 +1,250 @@
+/* =============================================================
+   Perkbox Brand Tokens — Global Perks Landing Page
+   Colours and typography per official Perkbox brand guidelines.
+   ============================================================= */
+
+/* --- PerkSans font face declarations --- */
+@font-face {
+  font-family: 'PerkSans';
+  src: url('../fonts/PerkSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PerkSans';
+  src: url('../fonts/PerkSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PerkSans';
+  src: url('../fonts/PerkSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PerkSans';
+  src: url('../fonts/PerkSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* --- Approved Perkbox Colour Palette --- */
+  --color-primary:       #4462c9;
+  --color-primary-dark:  #03072d;
+  --color-primary-light: #6b80d6;
+  --color-charcoal:      #353a4a;
+  --color-neutral:       #4A4A4A;
+  --color-bg-light:      #F1F5FA;
+  --color-danger:        #D0021B;
+  --color-warning:       #F64E63;
+
+  /* Semantic aliases */
+  --color-text:          #03072d;
+  --color-text-muted:    #4A4A4A;
+  --color-text-light:    #6b7280;
+  --color-bg:            #F1F5FA;
+  --color-bg-card:       #FFFFFF;
+  --color-bg-highlight:  #edf0f9;
+  --color-border:        #353a4a;
+  --color-border-light:  #d1d9e8;
+  --color-border-focus:  #4462c9;
+  --color-error:         #D0021B;
+
+  /* --- Typography — PerkSans only --- */
+  --font-heading: 'PerkSans', system-ui, sans-serif;
+  --font-body:    'PerkSans', system-ui, sans-serif;
+
+  --text-h1: 24px;
+  --text-h2: 22px;
+  --text-h3: 20px;
+  --text-h4: 18px;
+  --text-h5: 16px;
+  --text-h6: 14px;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-hero: clamp(1.75rem, 3.5vw, 2.75rem);
+
+  --font-light:     300;
+  --font-normal:    400;
+  --font-medium:    500;
+  --font-semibold:  600;
+  --font-bold:      700;
+
+  /* --- Spacing (8pt grid) --- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* --- Border radius --- */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm:  0 1px 3px rgba(3, 7, 45, 0.08), 0 1px 2px rgba(3, 7, 45, 0.04);
+  --shadow-md:  0 4px 12px rgba(3, 7, 45, 0.10), 0 2px 4px rgba(3, 7, 45, 0.06);
+  --shadow-lg:  0 8px 24px rgba(3, 7, 45, 0.12), 0 4px 8px rgba(3, 7, 45, 0.06);
+  --shadow-xl:  0 16px 40px rgba(68, 98, 201, 0.18);
+
+  /* --- Transitions --- */
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  /* --- Layout (wider for landing page) --- */
+  --container-max: 1200px;
+  --container-pad: clamp(1rem, 5vw, 2rem);
+}
+
+/* =============================================================
+   Reset & Base
+   ============================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 { font-size: var(--text-h1); font-weight: var(--font-medium); line-height: 1.2; letter-spacing: -0.02em; }
+h2 { font-size: var(--text-h2); font-weight: var(--font-medium); line-height: 1.2; letter-spacing: -0.02em; }
+h3 { font-size: var(--text-h3); font-weight: var(--font-medium); line-height: 1.25; }
+h4 { font-size: var(--text-h4); font-weight: var(--font-medium); line-height: 1.3; }
+h5 { font-size: var(--text-h5); font-weight: var(--font-medium); line-height: 1.3; }
+h6 { font-size: var(--text-h6); font-weight: var(--font-medium); line-height: 1.4; }
+
+.hero-headline {
+  font-size: var(--text-hero) !important;
+  font-weight: var(--font-bold) !important;
+}
+
+p { line-height: 1.5; }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover { color: var(--color-primary-dark); }
+
+img, svg { display: block; max-width: 100%; }
+
+/* =============================================================
+   Layout Utilities
+   ============================================================= */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.hidden { display: none !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =============================================================
+   Buttons
+   ============================================================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  padding: var(--space-4) var(--space-8);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(68, 98, 201, 0.30);
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background: #3551b5;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(68, 98, 201, 0.40);
+  color: #fff;
+}
+.btn-primary:active  { transform: translateY(0); }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  padding: calc(var(--space-4) - 2px) var(--space-8);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  white-space: nowrap;
+}
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.btn-secondary:active { transform: translateY(0); }

@@ -1,0 +1,22 @@
+{
+  "csvNameToTopoName": {
+    "Antigua and Barbuda": "Antigua and Barb.",
+    "Bosnia and Herz.": "Bosnia and Herz.",
+    "Central African Republic": "Central African Rep.",
+    "Côte d'Ivoire": "Côte d'Ivoire",
+    "Dominican Rep.": "Dominican Rep.",
+    "Equatorial Guinea": "Eq. Guinea",
+    "eSwatini": "eSwatini",
+    "Falkland Is.": "Falkland Is.",
+    "Guinea-Bissau": "Guinea-Bissau",
+    "Macedonia": "Macedonia",
+    "New Caledonia": "New Caledonia",
+    "Solomon Islands": "Solomon Is.",
+    "South Sudan": "S. Sudan",
+    "Saint Lucia": "Saint Lucia",
+    "Saint Vincent and the Grenadines": "St. Vin. and Gren.",
+    "Western Sahara": "W. Sahara",
+    "Dem. Rep. Congo": "Dem. Rep. Congo",
+    "Congo": "Congo"
+  }
+}
